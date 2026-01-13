@@ -158,6 +158,59 @@ SP500-BIST100-Sentiment-Comparison/
 
 > **Note:** BIST 100 news collection scripts are maintained in a separate repository due to different data collection requirements.
 
+# 🇹🇷 BIST 100 Implementation Details 
+
+This repository now includes the specific implementation for the **BIST 100** leg of the analysis, which uses a custom web scraping pipeline and streamlined execution.
+
+## 📁 BIST 100 Project Structure
+
+The BIST 100 specific files are located in the `src/` directory and root:
+
+```
+├── news_scraper.py                  # Custom BIST 100 News Scraper
+├── src/
+│   ├── main.py                      # Main pipeline orchestrator for BIST 100
+│   ├── price_fetcher.py             # BIST data fetcher via yfinance
+│   ├── sentiment_analyzer.py        # FinBERT model wrapper
+│   ├── sentiment_price_analysis.py  # Statistical & ML analysis (Core Logic)
+│   ├── comprehensive_analysis.py    # Detailed reporting script
+│   ├── create_final_figures.py      # Publication-ready figure generation
+│   ├── positive_findings_analysis.py# Focused positive findings analysis
+│   └── data_quality_check.py        # Data validation utility
+└── makale/                          # Output directory for BIST 100 final figures
+```
+
+## � Running the BIST 100 Analysis
+
+Unlike the S&P 500 pipeline which runs in steps, the BIST 100 analysis is orchestrated by a single script:
+
+### 1. Full Pipeline (Scrape + Prcocess + Analyze)
+```bash
+# Run the entire pipeline
+python src/main.py
+
+# Force new data collection (Scraping)
+python src/main.py --fetch-news
+```
+
+### 2. Analytical Reports
+To generate the specific BIST 100 reports and figures:
+
+```bash
+# Generate comprehensive statistical report
+python src/comprehensive_analysis.py
+
+# Create publication-ready figures (saved to 'makale/')
+python src/create_final_figures.py
+```
+
+## � BIST 100 Specific Findings
+
+*   **Same-Day Effect:** We observed a statistically significant positive correlation (r = 0.078) between news sentiment and same-day BIST 100 returns.
+*   **Reversal Effect:** A significant negative correlation (r = -0.081) on the following day, suggesting market overreaction and correction.
+*   **Significance:** These findings are statistically significant (p < 0.05) and consistent with behavioral finance theories in emerging markets.
+
+
 ## 🛠️ Technical Stack
 
 | Component | Technology |
