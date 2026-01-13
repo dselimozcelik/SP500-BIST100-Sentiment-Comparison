@@ -1,0 +1,35 @@
+# BIST100 Sentiment Analysis Project
+# Install with: pip install -r requirements.txt
+
+# Data Collection
+gnews==0.3.7
+dateparser>=1.1.8
+yfinance>=0.2.31
+
+# NLP & Sentiment Analysis
+transformers>=4.35.0
+torch>=2.0.0
+scipy>=1.11.0
+
+# Data Processing & Analysis
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.17.0
+
+# Statistical Analysis
+statsmodels>=0.14.0
+
+# Progress bars
+tqdm>=4.66.0
+
+# Hugging Face Datasets
+datasets>=2.14.0
+
+# Optional: GDELT (for additional news sources)
+gdeltdoc>=1.5.0
+
